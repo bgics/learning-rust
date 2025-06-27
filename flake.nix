@@ -13,11 +13,13 @@
         devShells = {
           default = pkgs.mkShell {
             buildInputs = with pkgs; [
-              clang
-              rustup
+              cargo
+              rustc
+              rustfmt
+              rust-analyzer
               taplo
             ];
-
+            
             shellHook = ''
               export PATH=$PATH:''${CARGO_HOME:-~/.cargo}/bin
             '';
