@@ -17,6 +17,10 @@
               rustup
               taplo
             ];
+
+            shellHook = ''
+              export PATH=$PATH:''${CARGO_HOME:-~/.cargo}/bin
+            '';
           };
         };
       }
